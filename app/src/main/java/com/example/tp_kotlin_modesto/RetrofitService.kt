@@ -7,5 +7,8 @@ import retrofit2.http.Query
 
 interface RetrofitService {
     @GET("/photos/random")
-    suspend fun getData(@Query("client_id") accessKey: String ="vsKBJQnRDk1doBI914JcGHGi8KLvzwaW9psCtgwvitg"): Response<QuoteResponse>
+    suspend fun getDataList(@Query("client_id") accessKey: String ="vsKBJQnRDk1doBI914JcGHGi8KLvzwaW9psCtgwvitg",@Query("count") nbPhoto: Int =5): Response<List<QuoteResponse>>
+
+    @GET("/photos/random")
+    suspend fun getData(@Query("client_id") accessKey: String = "vsKBJQnRDk1doBI914JcGHGi8KLvzwaW9psCtgwvitg"): Response<QuoteResponse>
 }

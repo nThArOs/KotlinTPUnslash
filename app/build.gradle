@@ -7,8 +7,9 @@ plugins {
 android {
     namespace 'com.example.tp_kotlin_modesto'
     compileSdk 32
-    dataBinding {
-        enabled = true
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
     }
 
     defaultConfig {

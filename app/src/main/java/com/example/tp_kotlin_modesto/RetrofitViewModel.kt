@@ -14,8 +14,8 @@ class RetrofitViewModel (
     private val retrofitService: RetrofitService
 ) : ViewModel(){
 
-    private val _data = MutableLiveData<QuoteResponse>()
-    val data: LiveData<QuoteResponse> = _data
+    private val _data = MutableLiveData<List<QuoteResponse>>()
+    val data: LiveData<List<QuoteResponse>> = _data
 
     init {
         fetchData()
@@ -27,7 +27,7 @@ class RetrofitViewModel (
 
     private fun fetchData() {
         viewModelScope.launch {
-            _data.value = retrofitService.getData().body()
+            _data.value = retrofitService.getDataList().body()
         }
     }
 }

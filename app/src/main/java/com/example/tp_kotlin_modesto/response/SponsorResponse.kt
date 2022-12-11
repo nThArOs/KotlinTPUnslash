@@ -1,3 +1,5 @@
 package com.example.tp_kotlin_modesto.response
 
-data class SponsorResponse()
+data class SponsorResponse(
+    val username: String
+)
